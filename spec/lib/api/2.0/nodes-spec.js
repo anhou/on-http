@@ -97,7 +97,7 @@ describe('2.0 Http.Api.Nodes', function () {
         relations:[{
             relationType: 'enclosedBy',
             info: null,
-            targets: '/api/2.0/nodes/5678abcd5678abcd5678abcd'
+            targets: ['/api/2.0/nodes/5678abcd5678abcd5678abcd']
         }],
         obms: [{
             service: 'noop-obm-service',
