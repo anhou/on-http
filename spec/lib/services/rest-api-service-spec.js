@@ -134,9 +134,10 @@ describe('Http.Server', function () {
                 .send('{badjson-1;d.c;zdg}')
                 .expect('Content-Type', /^application\/json/)
                 .expect(400)
-                .expect(function (req) {
-                    expect(req.body).to.have.property('message')
-                        .to.equal('Error parsing JSON: Unexpected token b');
+                .expect(function (res) {
+                    expect(res.body).to.have.property('message')
+                        //Node 6 has 'at position %'  than NodeJS 4
+                        .to.include('Error parsing JSON: Unexpected token b');
                 });
         });
 
